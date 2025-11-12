@@ -5,10 +5,27 @@ The goal of this protocol is to describe how manual registration was performed a
 >1. Data
 >>All nodes -> data_name -> Edit properties -> Information
 >2. Volumes
+>>Volume node stores voxels (3D arrays).
+>>
+>>Grid axes can be positioned and oriented in physical space.
+>>
+>>Axes may have different spacing.
+>>
+>>CT and MRI images are scalar volumes.
 >3. Models
 >>Display -> Visibility -> [Visbility, Opacity, View, Color]
 >>
 >>View specifies in which view the model is visible. If none are checked, the model is visible in all views, 2D or 3D.
+>>
+>>Volumes handle 2D images as a single-slice 3D image.
+>>
+>>Overlay Volumes: Load both -> Data module -> Left click on background volume, then right clikc on foreground volume and set it to foreground
+>>
+>>Use link to make changes apply to all volumes in view group.
+>>
+>>Image spacing: Distance [mm] between pixel centers when mapped to patient space
+>>
+>>Image Origin: Center of (0,0,0) IJK pixel expressed wrt patient space. Patient space organized wrt to subject Right, Anterior, and Superior anatomical directions.
 >4. Transforms
 >5. Markups
 >6. Segment Editor
