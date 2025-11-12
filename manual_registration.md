@@ -3,6 +3,7 @@ The goal of this protocol is to describe how manual registration was performed a
 
 >Before We Begin: The Available Tools
 >1. Data
+>>All nodes -> <data> -> Edit properties -> Information
 >2. Volumes
 >3. Models
 >4. Transforms
