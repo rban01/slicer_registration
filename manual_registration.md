@@ -12,10 +12,6 @@ The goal of this protocol is to describe how manual registration was performed a
 >>Axes may have different spacing.
 >>
 >>CT and MRI images are scalar volumes.
->3. Models
->>Display -> Visibility -> [Visbility, Opacity, View, Color]
->>
->>View specifies in which view the model is visible. If none are checked, the model is visible in all views, 2D or 3D.
 >>
 >>Volumes handle 2D images as a single-slice 3D image.
 >>
@@ -26,6 +22,10 @@ The goal of this protocol is to describe how manual registration was performed a
 >>Image spacing: Distance [mm] between pixel centers when mapped to patient space
 >>
 >>Image Origin: Center of (0,0,0) IJK pixel expressed wrt patient space. Patient space organized wrt to subject Right, Anterior, and Superior anatomical directions.
+>3. Models
+>>Display -> Visibility -> [Visbility, Opacity, View, Color]
+>>
+>>View specifies in which view the model is visible. If none are checked, the model is visible in all views, 2D or 3D.
 >4. Transforms
 >5. Markups
 >6. Segment Editor
