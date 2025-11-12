@@ -6,6 +6,8 @@ The goal of this protocol is to describe how manual registration was performed a
 >>All nodes -> data_name -> Edit properties -> Information
 >2. Volumes
 >3. Models
+>>Display -> Visibility -> [Visbility, Opacity, View, Color]
+>>View specifies in which view the model is visible. If none are checked, the model is visible in all views, 2D or 3D.
 >4. Transforms
 >5. Markups
 >6. Segment Editor
