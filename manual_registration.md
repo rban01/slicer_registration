@@ -16,6 +16,6 @@ The goal of this protocol is to describe how manual registration was performed a
 >11. Toggle Crosshair Visibility
 >12. Toggle Slice Intersection Visibility
 
-In our case, we have an obiturator, a vtkPolyData Model surface mesh imported as a .stl file, and likewise for the template.<br>
-CT and MRI data contain two volumes.<br>
+In our case, we have an obiturator, a vtkPolyData Model surface mesh imported as a .stl file, and likewise for the template.<br><br>
+CT and MRI data contain two volumes.<br><br>
 We need to align obiturator and template to projection in MRI, align CT with MRI, and then bring in the catheters and match them up as well.
