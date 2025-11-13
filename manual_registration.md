@@ -76,8 +76,15 @@ Finally, if the application crashes when rotating or zooming a volume, TDR error
 10. Check correspondence in all planes: Tip of obiturator vs MRI anatomy, template base against mucosal surfaces. Use Segment Editor -> Paint to quickly mark anatomical landmarks and visually confirm overlap.
 11. Optional refinement; If you need more precision, use "Landmark registration" in SlicerIGT for a few paired points, then refine with "Suface Registration (ICP)". Useful if you have visible markers or clear bony landmarks across both scans.
 
-
 Some helpful tips: Turn on Volume Rendering (e.g. bone threshold for CT, soft-tissue for MRI) to get 3D visual feedback. If CT is mis-scaled (rare but possible), confirm voxel spacing is correct under Volumes -> Volume Information
 
+## Hardware-first Plan
+Since patient positioning varies between the two image modalities, the most reliable reference frame is the applicator system itself.
+Adjustments to the above workflow: Parent the CT volume <ins>and</ins> both models under the CT-to_MRI transform.This keeps everything moving as a single rigid block.
+Use the visible high-contrast parts of the applicator, such as metal sleeves, flange borders, obturator tip, or template grooves. These are typically very distinct on CT, and their MR visibility is faint but spatially consistent.
+In Transforms, select CT-to_MRI transform and use interctive 3D translation/rotation handles or numeric inputs: Start coarse, aligning the global orientation of the template plane to MRI (use axial slice to line up the template's physical plane). Then fine-tune, zooming in on obturator tip and template slots.
 
+It will help to switch between slice intesections on (Ctrl+Shift+I), volume blending (CT on top of MRI with 50-70% opacity), and 3D view (template surface and MRI volume rendering) to constantly verify match
+
+Visual cross-checks: red slcie verifies obturator tip depth, yellow/green slices verify lateral position of template goles and obturator curvature. 3D view ensures the obturator azis passes cleanly through template central guide. Use Shift+Mouse drag in slice views to quickly scrub along catheter paths or template planes for sanity checks.
 
