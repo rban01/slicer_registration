@@ -48,12 +48,12 @@ We need to align obiturator and template to projection in MRI, align CT with MRI
 >
 >Segment Editor -> Paint/Scissors to specify region -> Mask volume effect to fill region with empty values -> Hide volume rendering of original volume and set up rendering for masked vol -> Update using Masked volume effect
 
->Panels and their use (volume rendering)
+>Panels and their use (volume rendering)
 >>Inputs: List of nodes for VolumeRendering.
 >>
 >>Volume: Select volume to render (one at a time)
 >>
->Display: Select current volume rendering display properties. Display nodes have inof related to the rendering (pointers to ROI, volume proprty, view nodes). New display node is automatically created if none exist for current volume.
+>>Display: Select current volume rendering display properties. Display nodes have inof related to the rendering (pointers to ROI, volume proprty, view nodes). New display node is automatically created if none exist for current volume.
 >>
 >>ROI: Select current ROI
 >>
