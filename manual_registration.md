@@ -63,7 +63,7 @@ We need to align obiturator and template to projection in MRI, align CT with MRI
 
 Finally, if the application crashes when rotating or zooming a volume, TDR error occurred indicating GPU overwhelmed by volume rendering. Either reduce the volume size, use CPU, increase TDR delay time, or update graphics card.
 
-## Plan
+## Anatomy-first Plan
 1. Load MRI and CT volumes into Data module
 2. Set MRI as Fixed (target coordinate system)
 3. Set CT as Moving (to align to MRI)
@@ -71,11 +71,13 @@ Finally, if the application crashes when rotating or zooming a volume, TDR error
 5. In the Volumes module, use different lookup tables and adjust the window/level to highlight anatomy.
 6. Use orthogonal slice views (Red, Yellow, Green) side-by-side. Turn on Linked slice views for simultaneous motion. Togle CT volume visibility on/off to visually assess overlap.
 7. Use the 'Transforms' module. Create a new linear transform CT-to_MRI, drag the CT volume under this transform in the Data tree, use the interactive translation/rotation handles or numeric input. Align bony structures or known landmarks (nasal cavity, palate, fiducials if present). Start with large rough adjustments in 3D viw. Fine-tune using slice-by-slice overlays ("CT: 50% opacity")
-
-Some helpful tips: Turn on Volume Rendering (e.g. bone threshold for CT, soft-tissue for MRI) to get 3D visual feedback. If CT is mis-scaled (rare but possible), confirm voxel spacing is correct under Volumes -> Volume Information
 8. Bring in Obiturator and Template Models. Models usually originate in the same coordinate system as CT. Drag both under the same CT_to_MRI transform (they move in sync with CT). Adjust transofrm until implant eometry lines up with MRI anatomy.
 9. Once satisfied, Right-click CT and models -> Harden transform to bake alignment. Optionally remove transform node.
 10. Check correspondence in all planes: Tip of obiturator vs MRI anatomy, template base against mucosal surfaces. Use Segment Editor -> Paint to quickly mark anatomical landmarks and visually confirm overlap.
 11. Optional refinement; If you need more precision, use "Landmark registration" in SlicerIGT for a few paired points, then refine with "Suface Registration (ICP)". Useful if you have visible markers or clear bony landmarks across both scans.
+
+
+Some helpful tips: Turn on Volume Rendering (e.g. bone threshold for CT, soft-tissue for MRI) to get 3D visual feedback. If CT is mis-scaled (rare but possible), confirm voxel spacing is correct under Volumes -> Volume Information
+
 
 
