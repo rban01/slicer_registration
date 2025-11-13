@@ -43,16 +43,21 @@ CT and MRI data contain two volumes.<br><br>
 We need to align obiturator and template to projection in MRI, align CT with MRI, and then bring in the catheters and match them up as well.
 
 >How to Hide Certain Regions of a Volume
+>
 >If a portion cannot be hidden using the cropping box/ROI, then:
+>
 >Segment Editor -> Paint/Scissors to specify region -> Mask volume effect to fill region with empty values -> Hide volume rendering of original volume and set up rendering for masked vol -> Update using Masked volume effect
->Panels and their use (volume rendering)
 
->Additional Control Options:
->Inputs: List of nodes for VolumeRendering.
->Volume: Select volume to render (one at a time)
+>Panels and their use (volume rendering)
+>>Inputs: List of nodes for VolumeRendering.
+>>
+>>Volume: Select volume to render (one at a time)
+>>
 >Display: Select current volume rendering display properties. Display nodes have inof related to the rendering (pointers to ROI, volume proprty, view nodes). New display node is automatically created if none exist for current volume.
->ROI: Select current ROI
->View: As above.
+>>
+>>ROI: Select current ROI
+>>
+>>View: As above.
 
 
 Limitations
