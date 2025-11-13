@@ -58,32 +58,9 @@ We need to align obiturator and template to projection in MRI, align CT with MRI
 >>ROI: Select current ROI
 >>
 >>View: As above.
+>>
+>>To render multiple overlapping volumes: Display -> VTK Multi-Volume. Has limitations. The volume must not be under an affine transformation; warped volumes must have had their transforms hardened.
+
+Finally, if the application crashes when rotating or zooming a volume, TDR error occurred indicating GPU overwhelmed by volume rendering. Either reduce the volume size, use CPU, increase TDR delay time, or update graphics card.
 
 
-Limitations
-To render multiple overlapping volumes, select “VTK Multi-Volume” rendering in “Display” section. This renderer is still experimental and has limitations such as:
-
-Cropping is not supported (cropping ROI is ignored)
-
-RGB volume rendering is not supported (volume does not appear)
-
-Only “Composite with shading” rendering technique is supported (volume does not appear if “Maximum Intensity Projection” or “Minimum Intensity Projection” technique is selected)
-
-To reduce staircase artifacts during rendering, choose enable “Surface smoothing” in Advanced/Techniques/Advanced rendering properties section, or choose “Normal” or “Maximum” as quality.
-
-The volume must not be under a warping (affine or non-linear) transformation. To render a warped volume, the transform must be hardened on the volume. (see related issue)
-
-If the application crashes when rotating or zooming a volume: This indicates that you get a TDR error, i.e., the operating system shuts down applications that keep the graphics card busy for too long. This happens because the size of the volume is too large for your GPU to comfortably handle. There are several ways to work around this:
-
-Option A: Run the code snippet in the Python console (Ctrl-3) to split the volume to smaller chunks (that way you have a better chance that the graphics card will not be unresponsive for too long).
-
-slicer.vtkMRMLVolumeRenderingDisplayableManager.SetMaximum3DTextureSize(400)
-for vrDisplayNode in getNodesByClass('vtkMRMLVolumeRenderingDisplayNode'):
-    slicer.util.arrayFromVolumeModified(vrDisplayNode.GetVolumeNode())
-Option B: Crop and downsample your volume using Crop volume and volume render this smaller volume.
-
-Option C: Increase TDR delay value in registry (see details here)
-
-Option D: Use CPU volume rendering.
-
-Option E: Upgrade your computer with a stronger graphics card.
