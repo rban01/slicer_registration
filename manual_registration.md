@@ -46,17 +46,13 @@ We need to align obiturator and template to projection in MRI, align CT with MRI
 >If a portion cannot be hidden using the cropping box/ROI, then:
 >Segment Editor -> Paint/Scissors to specify region -> Mask volume effect to fill region with empty values -> Hide volume rendering of original volume and set up rendering for masked vol -> Update using Masked volume effect
 >Panels and their use (volume rendering)
-Inputs: Contains the list of nodes required for VolumeRendering. It is unlikely that you need to interact with controllers.
 
-Volume: Select the current volume to render. Note that only one volume can be rendered at a time.
-
-Display: Select the current volume rendering display properties. Volume rendering display nodes contains all the information relative to volume rendering. They contain pointers to the ROI, volume property and view nodes. A new display node is automatically created if none exist for the current volume.
-
-ROI: Select the current ROI to optionally crop with 6 planes the volume rendering.
-
-Property: Select the current Volume Property. Volume properties contain the opacity, color and gradient transfer functions for each component.
-
-View: Select the 3D views where the volume rendering must be displayed into. If no view is selected, the volume rendering is visible in all views
+>Additional Control Options:
+>Inputs: List of nodes for VolumeRendering.
+>Volume: Select volume to render (one at a time)
+>Display: Select current volume rendering display properties. Display nodes have inof related to the rendering (pointers to ROI, volume proprty, view nodes). New display node is automatically created if none exist for current volume.
+>ROI: Select current ROI
+>View: As above.
 
 
 Limitations
